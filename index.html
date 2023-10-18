@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream BikeShop</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Dream BikeShop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="clients.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="stock.html">Estoque</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Feito por quem ama e vive a bike!
+          </span>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="row" id="fast-access">
+          <!-- Button trigger modal -->
+          <div class="col-xs-12 col-sm-4 col-xl-4">
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" id="fast-button">
+              Novo Cliente
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Novo Cliente</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Número</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Bikes</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-xl-4">
+            <button type="button" class="btn btn-light" id="fast-button">Novo Serviço</button>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-xl-4">
+            <button type="button" class="btn btn-light" id="fast-button">Novo Produto</button>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-xl-3">
+              <section>
+                <h5 style="margin: auto; text-align: center;">Serviços criados:</h5> <br>
+                <div class="card text-bg-light mb-3" id="card-dashboard-1" style="max-width: 18rem;">
+                  <div class="card-header" id="card-header">Hoje</div>
+                  <div class="card-body">
+                    <h5 class="card-title", id="card-day"></h5>
+                  </div>
+                </div>
+                <div class="card text-bg-light mb-3" id="card-dashboard-2" style="max-width: 18rem;">
+                  <div class="card-header" id="card-header">Esta semana</div>
+                  <div class="card-body">
+                    <h5 class="card-title" id="card-week"></h5>
+                  </div>
+                </div>
+                <div class="card text-bg-light mb-3" id="card-dashboard-3" style="max-width: 18rem;">
+                  <div class="card-header" id="card-header">Este mês</div>
+                  <div class="card-body">
+                    <h5 class="card-title" id="card-month"></h5>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-xl-9">
+              <section>
+                <table class="table table-striped" id="homeTable">
+                  <thead>
+                    <tr>
+                      <th>Cliente</th>
+                      <th>Bicicleta</th>
+                      <th>Serviço</th>
+                      <th>Data</th>
+                    </tr>
+                  </thead>
+                </table>   
+              </section>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="py-3 my-4">
+  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+  </ul>
+  <p class="text-center text-body-secondary">&copy; 2023 Bike-Sys, Inc</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="http://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="js/index.js"></script>
+
+</html>

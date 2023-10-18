@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#card-header {
+    background-color: #8A8E6D;
+}
+
+#fast-button {
+    background-color: #8A8E6D;
+}
+
+button {
+    width: 100% !important;
+    padding: 0.8em;
+    margin: 15px 0;
+}
+
+.dialog-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+    z-index: 99;
+}
+
+.dialog {
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    margin-top: 200px;
+    background-color: white;
+}
